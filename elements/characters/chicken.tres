@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dams15xcfqcrb"]
+
+[ext_resource type="Texture2D" uid="uid://jaiin3wu2kce" path="res://assets/chicken/idle/idle-1.png" id="1_vo6rs"]
+[ext_resource type="Texture2D" uid="uid://b3gekpnmle5x" path="res://assets/chicken/idle/idle-2.png" id="2_nh241"]
+[ext_resource type="Texture2D" uid="uid://canasv1ib8ubl" path="res://assets/chicken/idle/idle-3.png" id="3_s28nx"]
+[ext_resource type="Texture2D" uid="uid://dojxxekxup0i" path="res://assets/chicken/idle/idle-4.png" id="4_jlbwt"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vo6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nh241")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s28nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jlbwt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
