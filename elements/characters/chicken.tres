@@ -1,11 +1,16 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dams15xcfqcrb"]
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dams15xcfqcrb"]
 
 [ext_resource type="Texture2D" uid="uid://jaiin3wu2kce" path="res://assets/chicken/idle/idle-1.png" id="1_vo6rs"]
 [ext_resource type="Texture2D" uid="uid://b3gekpnmle5x" path="res://assets/chicken/idle/idle-2.png" id="2_nh241"]
 [ext_resource type="Texture2D" uid="uid://canasv1ib8ubl" path="res://assets/chicken/idle/idle-3.png" id="3_s28nx"]
 [ext_resource type="Texture2D" uid="uid://dojxxekxup0i" path="res://assets/chicken/idle/idle-4.png" id="4_jlbwt"]
+[ext_resource type="Texture2D" uid="uid://gkorsdsro4rx" path="res://assets/chicken/ready/ready-1.png" id="5_6seem"]
+[ext_resource type="Texture2D" uid="uid://bhwhfjaqt78p1" path="res://assets/chicken/ready/ready-2.png" id="6_407j1"]
+[ext_resource type="Texture2D" uid="uid://5f5x0oirivls" path="res://assets/chicken/ready/ready-3.png" id="7_103p4"]
+[ext_resource type="Texture2D" uid="uid://clghnclou1dlf" path="res://assets/chicken/ready/ready-4.png" id="8_bhyq2"]
 
 [resource]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -22,5 +27,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 1.75
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6seem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_407j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_103p4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bhyq2")
+}],
+"loop": true,
+"name": &"ready",
+"speed": 8.0
 }]

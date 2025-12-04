@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlo7wyvar8o7p"]
+[gd_scene load_steps=3 format=3 uid="uid://dlo7wyvar8o7p"]
 
+[ext_resource type="Script" uid="uid://b6ws3c6uxi7s1" path="res://elements/game.gd" id="1_5q1mt"]
 [ext_resource type="PackedScene" uid="uid://cy03y6wtg4apr" path="res://elements/characters/chicken.tscn" id="1_sfywo"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_5q1mt")
 
 [node name="Chicken" parent="." instance=ExtResource("1_sfywo")]
-position = Vector2(227, 153)
+position = Vector2(163.00002, 241)
+scale = Vector2(10, 10)
+
+[node name="Chicken2" parent="." instance=ExtResource("1_sfywo")]
+position = Vector2(300, 241)
+scale = Vector2(10, 10)
+
+[node name="Chicken3" parent="." instance=ExtResource("1_sfywo")]
+position = Vector2(434, 241)
 scale = Vector2(10, 10)
