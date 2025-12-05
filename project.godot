@@ -13,7 +13,7 @@ config_version=5
 config/name="IdleClicker2"
 run/main_scene="uid://dlo7wyvar8o7p"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="uid://gkorsdsro4rx"
+config/icon="uid://basahsgjtem7e"
 
 [display]
 

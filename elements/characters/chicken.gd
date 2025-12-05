@@ -1,9 +1,10 @@
 extends Node2D
 
+enum State { IDLE, READY }
+var state = State.IDLE
+
 var rnd := RandomNumberGenerator.new()
 var eggs_generated := 0
-enum ChickenState { IDLE, READY }
-var state: ChickenState = ChickenState.IDLE
 
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $Timer
@@ -13,17 +14,20 @@ func _ready() -> void:
 	chicken_is_idle()
 	start_random_timer()
 
+func change_state(new_state: State):
+	state = new_state
+
 func start_random_timer() -> void:
 	timer.wait_time = rnd.randf_range(3.0, 7.0)
 	print("Таймер установлен на %s секунд" % $Timer.wait_time)
 	timer.start()
 
 func chicken_is_idle():
-	state = ChickenState.IDLE
+	change_state(State.IDLE)
 	animation.play("idle")
 
 func chicken_is_ready():
-	state = ChickenState.READY
+	change_state(State.READY)
 	animation.play("ready")
 
 func eggs_generation():
