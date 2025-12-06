@@ -6,14 +6,17 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_5q1mt")
 
-[node name="Chicken" parent="." instance=ExtResource("1_sfywo")]
+[node name="Chickens" type="Node2D" parent="."]
 position = Vector2(163.00002, 241)
 scale = Vector2(10, 10)
 
-[node name="Chicken2" parent="." instance=ExtResource("1_sfywo")]
-position = Vector2(300, 241)
-scale = Vector2(10, 10)
+[node name="Chicken" parent="Chickens" instance=ExtResource("1_sfywo")]
+scale = Vector2(0.99999994, 0.99999994)
 
-[node name="Chicken3" parent="." instance=ExtResource("1_sfywo")]
-position = Vector2(434, 241)
-scale = Vector2(10, 10)
+[node name="Chicken2" parent="Chickens" instance=ExtResource("1_sfywo")]
+position = Vector2(13.699997, 0)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Chicken3" parent="Chickens" instance=ExtResource("1_sfywo")]
+position = Vector2(27.099997, 0)
+scale = Vector2(0.99999994, 0.99999994)
