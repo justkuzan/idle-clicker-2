@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnjaed45bgr80"]
+
+[ext_resource type="Script" uid="uid://jnacjmny6g3c" path="res://elements/custom_cursor.gd" id="1_j1v2k"]
+
+[node name="CustomCursor" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("1_j1v2k")
