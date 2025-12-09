@@ -27,6 +27,3 @@ func on_chicken_was_clicked(chicken):
 	tween.tween_property(egg, "position:y", egg.position.y - 100, 0.8).as_relative()
 	tween.tween_callback(Callable(egg, "queue_free"))
 	tween.play()
-
-func set_cursor(scale = Vector2(7, 7)) -> void:
-	custom_cursor.scale = 7

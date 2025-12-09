@@ -10,10 +10,18 @@ signal chicken_is_prepared
 signal eggs_spawned(count)
 signal chicken_was_clicked(chicken)
 
+var hovered = false
+
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $Timer
+@onready var custom_cursor = $CustomCursor
 
 func _ready() -> void:
+	#Cursor
+	$Area2D.mouse_entered.connect(_on_area_2d_mouse_entered)
+	$Area2D.mouse_exited.connect(_on_area_2d_mouse_exited)
+	
+	#Logic
 	add_to_group("chickens")
 	rnd.randomize()
 	chicken_is_idle()
@@ -46,8 +54,19 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		print("Персонажа нажали!")
 		emit_signal("chicken_was_clicked", self)
+		CustomCursor.set_click_cursor()
 
 func _on_timer_timeout() -> void:
 	chicken_is_ready()
 	print("Таймер закончился")
 	eggs_generation()
+
+func _on_area_2d_mouse_entered():
+	hovered = true
+	$AnimatedSprite2D.scale = Vector2(1.2, 1.2)
+	CustomCursor.set_hover_cursor()
+
+func _on_area_2d_mouse_exited():
+	hovered = false
+	$AnimatedSprite2D.scale = Vector2(1, 1)
+	CustomCursor.set_default_cursor()

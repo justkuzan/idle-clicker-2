@@ -7,3 +7,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 script = ExtResource("1_j1v2k")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
