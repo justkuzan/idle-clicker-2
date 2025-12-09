@@ -1,7 +1,7 @@
 extends Node2D
 
 enum State { IDLE, READY }
-var state = State.IDLE
+var state: State = State.IDLE
 
 var rnd := RandomNumberGenerator.new()
 var eggs_generated := 0
@@ -14,14 +14,8 @@ var hovered = false
 
 @onready var animation = $AnimatedSprite2D
 @onready var timer = $Timer
-@onready var custom_cursor = $CustomCursor
 
 func _ready() -> void:
-	#Cursor
-	$Area2D.mouse_entered.connect(_on_area_2d_mouse_entered)
-	$Area2D.mouse_exited.connect(_on_area_2d_mouse_exited)
-	
-	#Logic
 	add_to_group("chickens")
 	rnd.randomize()
 	chicken_is_idle()
