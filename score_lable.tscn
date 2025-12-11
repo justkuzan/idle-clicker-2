@@ -12,7 +12,7 @@ texture_margin_bottom = 10.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="score_label" type="CanvasLayer"]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 8
@@ -35,7 +35,7 @@ size_flags_vertical = 4
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = -4
 theme_override_constants/margin_right = 7
-theme_override_constants/margin_bottom = -4
+theme_override_constants/margin_bottom = -6
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2

@@ -5,30 +5,30 @@
 [ext_resource type="PackedScene" uid="uid://bmlxttg1r46s3" path="res://score_lable.tscn" id="2_pem08"]
 [ext_resource type="PackedScene" uid="uid://dnjaed45bgr80" path="res://elements/custom_cursor.tscn" id="4_pem08"]
 
-[node name="Game" type="Node2D"]
+[node name="game" type="Node2D"]
 script = ExtResource("1_5q1mt")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("2_pem08")]
+[node name="score_label" parent="." instance=ExtResource("2_pem08")]
 
-[node name="Chickens" type="Node2D" parent="."]
+[node name="chickens" type="Node2D" parent="."]
 position = Vector2(184.00002, 280)
 scale = Vector2(10, 10)
 
-[node name="Chicken" parent="Chickens" instance=ExtResource("1_sfywo")]
+[node name="Chicken" parent="chickens" instance=ExtResource("1_sfywo")]
 position = Vector2(1.5999984, 0)
 scale = Vector2(0.7, 0.7)
 
-[node name="Chicken2" parent="Chickens" instance=ExtResource("1_sfywo")]
+[node name="Chicken2" parent="chickens" instance=ExtResource("1_sfywo")]
 position = Vector2(13.699995, 0)
 scale = Vector2(0.7, 0.7)
 
-[node name="Chicken3" parent="Chickens" instance=ExtResource("1_sfywo")]
+[node name="Chicken3" parent="chickens" instance=ExtResource("1_sfywo")]
 position = Vector2(25.600004, 0)
 scale = Vector2(0.7, 0.7)
 
-[node name="Eggs" type="Node2D" parent="."]
+[node name="eggs" type="Node2D" parent="."]
 
-[node name="CustomCursor" parent="." instance=ExtResource("4_pem08")]
+[node name="custom_cursor" parent="." instance=ExtResource("4_pem08")]
 offset_left = 304.0
 offset_top = 24.0
 offset_right = 344.0

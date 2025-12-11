@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dds2plai7eoyj" path="res://assets/egg/idle/egg-1.png" id="1_phyuj"]
 
-[node name="Egg" type="Node2D"]
+[node name="egg" type="Node2D"]
 scale = Vector2(3.5, 3.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
