@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cxgrybupouog8"]
+
+[ext_resource type="FontFile" uid="uid://dphcunee5k7i1" path="res://Assets/Fonts/Micro5-Regular.ttf" id="1_0edjw"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_0edjw")
+font_size = 52
+font_color = Color(1.096, 1.096, 1.096, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.5137255)

@@ -17,7 +17,7 @@ config/icon="uid://basahsgjtem7e"
 
 [autoload]
 
-CustomCursor="*res://elements/custom_cursor.gd"
+CustomCursor="*res://HUD/Custom Cursor/custom_cursor.gd"
 
 [display]
 
