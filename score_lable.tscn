@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmlxttg1r46s3"]
+[gd_scene load_steps=6 format=3 uid="uid://bmlxttg1r46s3"]
 
 [ext_resource type="Texture2D" uid="uid://jhgnl4yqwjey" path="res://assets/hud/panels/wood_panel.png" id="1_cpbkv"]
+[ext_resource type="Script" uid="uid://ccp0ebtm8kvs3" path="res://score_lable.gd" id="1_vi0uv"]
 [ext_resource type="LabelSettings" uid="uid://cxgrybupouog8" path="res://elements/score_lable.tres" id="2_cpbkv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cpbkv"]
@@ -12,7 +13,11 @@ texture_margin_bottom = 10.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpbkv"]
+size = Vector2(46, 48)
+
 [node name="score_label" type="CanvasLayer"]
+script = ExtResource("1_vi0uv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 8
@@ -33,9 +38,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = -4
+theme_override_constants/margin_top = -8
 theme_override_constants/margin_right = 7
-theme_override_constants/margin_bottom = -6
+theme_override_constants/margin_bottom = -10
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
@@ -44,3 +49,11 @@ text = "0"
 label_settings = ExtResource("2_cpbkv")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(328.79, 54.585)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_cpbkv")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

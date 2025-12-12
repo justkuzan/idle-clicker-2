@@ -28,11 +28,6 @@ func on_chicken_was_clicked(chicken):
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_OUT)
 	
-	var target_pos = score_label.get_global_position()
+	var target_pos = score_label.area2d.get_global_transform_with_canvas().origin
 	tween.tween_property(egg, "global_position", target_pos, 0.5)
 	tween.finished.connect(egg.queue_free)
-	
-	#var tween_egg_movement = get_tree().create_tween()
-	#tween_egg_movement.tween_property(egg, "position:y", egg.position.y - 100, 0.8).as_relative()
-	#tween_egg_movement.tween_callback(Callable(egg, "queue_free"))
-	#tween_egg_movement.play()
