@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var egg_scene = preload("res://Entities/Organisms/Chicken/Egg/egg.tscn")
 @onready var eggs_container = $eggs
-@onready var custom_cursor = $custom_cursor
 @onready var score_label = $score_label
 
 func _ready() -> void:
@@ -28,6 +27,13 @@ func on_chicken_was_clicked(chicken):
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.set_ease(Tween.EASE_OUT)
 	
-	var target_pos = score_label.area2d.get_global_transform_with_canvas().origin
-	tween.tween_property(egg, "global_position", target_pos, 0.5)
-	tween.finished.connect(egg.queue_free)
+	#var targer = $score_label.get_tree()
+	#var target_pos = target.area2d.get_global_transform_with_canvas().origin
+	#tween.tween_property(egg, "global_position", target_pos, 0.5)
+	#tween.finished.connect(egg.queue_free)
+	
+#func on_label_area_was_entered():
+	#var label = score_label.get_node("PanelContainer/MarginContainer/Label")
+	#var current_score = int(label.text)
+	#current_score += 1
+	#label.text = str(current_score)

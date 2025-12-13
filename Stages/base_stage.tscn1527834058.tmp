@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlo7wyvar8o7p"]
+
+[ext_resource type="Script" uid="uid://b6ws3c6uxi7s1" path="res://Stages/base_stage.gd" id="1_ba0pu"]
+[ext_resource type="PackedScene" uid="uid://cy03y6wtg4apr" path="res://Entities/Organisms/Chicken/Chicken/chicken.tscn" id="2_ycwsc"]
+[ext_resource type="PackedScene" uid="uid://dnjaed45bgr80" path="res://HUD/Custom Cursor/custom_cursor.tscn" id="3_55j6m"]
+[ext_resource type="Texture2D" uid="uid://jhgnl4yqwjey" path="res://HUD/Score Label/Art/wood_panel.png" id="4_ycwsc"]
+[ext_resource type="LabelSettings" uid="uid://cxgrybupouog8" path="res://HUD/Score Label/Data/score_lable.tres" id="5_55j6m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tnai2"]
+texture = ExtResource("4_ycwsc")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 10.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1ugm"]
+size = Vector2(48, 48)
+
+[node name="base_stage" type="Node2D"]
+script = ExtResource("1_ba0pu")
+
+[node name="chickens" type="Node2D" parent="."]
+position = Vector2(184.00002, 280)
+scale = Vector2(10, 10)
+
+[node name="Chicken" parent="chickens" instance=ExtResource("2_ycwsc")]
+position = Vector2(1.5999984, 0)
+scale = Vector2(0.7, 0.7)
+
+[node name="Chicken2" parent="chickens" instance=ExtResource("2_ycwsc")]
+position = Vector2(13.699995, 0)
+scale = Vector2(0.7, 0.7)
+
+[node name="Chicken3" parent="chickens" instance=ExtResource("2_ycwsc")]
+position = Vector2(25.600004, 0)
+scale = Vector2(0.7, 0.7)
+
+[node name="eggs" type="Node2D" parent="."]
+
+[node name="custom_cursor" parent="." instance=ExtResource("3_55j6m")]
+offset_left = 304.0
+offset_top = 24.0
+offset_right = 344.0
+offset_bottom = 64.0
+
+[node name="score_label" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="score_label"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_top = 28.0
+offset_right = 26.0
+offset_bottom = 81.00004
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_tnai2")
+
+[node name="MarginContainer" type="MarginContainer" parent="score_label/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = -10
+
+[node name="Label" type="Label" parent="score_label/PanelContainer/MarginContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_55j6m")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="score_label"]
+position = Vector2(320, 54.175)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="score_label/Area2D"]
+shape = SubResource("RectangleShape2D_r1ugm")
